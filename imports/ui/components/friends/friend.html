@@ -1,0 +1,14 @@
+<template name="friend">
+  <li class="friend-item p-2 border-bottom d-flex w-100 align-items-center">
+    <span class="d-inline-block mr-3">
+      <img src="{{avatar}}" alt="{{fullName}}" class="profile-image" />
+    </span>
+    <span class="d-block w-100">
+      <span class="name d-block">{{fullName}} ({{email}})</span>
+      <span class="detail d-block">{{professionalTitle}} - {{organization}}</span>
+      <span class="metadata text-muted">
+        <span class="city">{{city}}</span>, <span class="country">{{country}}</span>
+      </span>
+    </span>
+  </li>
+</template>

@@ -1,0 +1,16 @@
+<template name="App_home">
+  <div class="container">
+    {{#with userReady}}
+      {{#if profile.profileComplete}}
+        <div class="clearfix text-right py-3">
+          <button type="button" class="btn btn-sm btn-outline-primary" id="btnLogout">Logout</button>
+        </div>
+        {{> FindFriends}}
+        <!-- {{> hello}} -->
+        <!-- {{> info}} -->
+      {{else}}
+        {{ goToProfileForm }}
+      {{/if}}
+    {{/with}}
+  </div>
+</template>

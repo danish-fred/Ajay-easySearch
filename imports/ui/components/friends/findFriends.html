@@ -1,0 +1,44 @@
+<template name="FindFriends">
+  <div class="row">
+    <div class="col-sm-6 col-md-4">
+      {{! > EasySearch.Autosuggest index=index }}
+
+      {{> EasySearch.Input index=index attributes=inputAttributes }}
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <select class="country-filter form-control">
+        <option value="">All</option>
+        {{#each countryList}}
+          <option value="{{.}}">{{.}}</option>
+        {{/each}}
+      </select>
+    </div>
+  </div>
+
+  {{#EasySearch.IfInputEmpty index=index }}
+    <!-- <div class="padded examples">For example "Grace Gaga"</div> -->
+  {{else}}
+  {{/EasySearch.IfInputEmpty}}
+  {{#if resultsCount}}
+    <div class="pt-2 padded count-results">{{resultsCount}} total results</div>
+  {{/if}}
+
+  <div class="clearfix py-3">
+    {{#EasySearch.IfSearching index=index }}
+      <div class="p-2">Searching</div>
+    {{/EasySearch.IfSearching }}
+
+    <ol class="leaderboard px-2">
+      {{#EasySearch.Each index=index }}
+        {{> friend}}
+      {{/EasySearch.Each}}
+    </ol>
+    {{#EasySearch.IfNoResults index=index }}
+      <div class="padded no-results">No results found</div>
+    {{/EasySearch.IfNoResults}}
+  </div>
+
+  {{> EasySearch.Pagination index=index maxPages=10 }}
+  {{! > EasySearch.LoadMore index=index }}
+
+</template>

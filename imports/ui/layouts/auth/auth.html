@@ -1,0 +1,7 @@
+<template name="App_auth">
+  {{#unless userId}}
+    {{> Template.dynamic template=main}}
+  {{else}}
+    {{goToHome}}
+  {{/unless}}
+</template>

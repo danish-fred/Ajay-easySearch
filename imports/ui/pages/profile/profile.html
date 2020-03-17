@@ -1,0 +1,55 @@
+<template name="Profile">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10 col-md-8 col-lg-6 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Complete your registration</h5>
+            <form class="form-signin" id="profileForm">
+              <div class="form-group">
+                <div class="text-center mb-2">
+                  <div class="d-inline-block m-auto">
+                    <img src="/img/profile.png" alt="Profile" id="profileImage" />
+                  </div>
+                </div>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="inputAvatarFile" accept="image/*" >
+                  <label class="custom-file-label" for="inputAvatarFile"><span id="fileLabel">Choose file</span></label>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" name="fullName" id="inputFullName" class="form-control" placeholder="Full Name" required autofocus />
+              </div>
+              <div class="form-group">
+                <input type="text" name="professionalTitle" id="inputProfessionalTitle" class="form-control" placeholder="Professional Title" required />
+              </div>
+              <div class="form-group">
+                <input type="text" name="educationalTitle" id="inputEducationalTitle" class="form-control" placeholder="Educational Title" required />
+              </div>
+              <div class="form-group">
+                <input type="text" name="organization" id="inputOrganization" class="form-control" placeholder="Organization (job/school)" required />
+              </div>
+              <div class="form-group">
+                <input type="text" name="city" id="inputCity" class="form-control" placeholder="City" required />
+              </div>
+              <div class="form-group">
+                <select class="form-control" name="country" id="inputCountry" required >
+                  <option value="" selected="true" disabled="disabled">Select your country</option>
+                  {{#each countryList}}
+                    <option value="{{.}}">{{.}}</option>
+                  {{/each}}
+                </select>
+              </div>
+
+              <button class="btn btn-md btn-primary btn-block" type="submit">Save</button>
+            </form>
+            {{checkUserProfileStatus}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{#if progress}}
+    {{> Loading}}
+  {{/if}}
+</template>
