@@ -3,7 +3,7 @@ import { Template } from 'meteor/templating'
 import { ReactiveVar } from 'meteor/reactive-var'
 import { FlowRouter } from 'meteor/kadira:flow-router'
 
-import { countryList } from '/imports/startup/client/country.js'
+import { countryList } from '/imports/startup/both/country.js'
 
 import './profile.html'
 

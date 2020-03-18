@@ -18,6 +18,6 @@ export const MembersIndex = new EasySearch.Index({
      }
    }),
    defaultSearchOptions: {
-     limit: 10
+     limit: 50
    }
 });

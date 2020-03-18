@@ -1,7 +1,7 @@
 import { Template } from 'meteor/templating'
 import { MembersIndex } from '/imports/api/users/members.js'
 
-import { countryList } from '/imports/startup/client/country.js'
+import { countryList } from '/imports/startup/both/country.js'
 
 import './findFriends.html'
 
